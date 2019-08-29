@@ -42,7 +42,7 @@
     # - { role: python, become: true }
     # - { role: postman, become: true }
     # - { role: redis, become: true }
-    - { role: rbenv, become: true }
+    # - { role: rbenv, become: true }
     - { role: ssh, become: true }
     # Desktop roles
     # - { role: audacious, become: true }
