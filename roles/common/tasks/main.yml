@@ -63,3 +63,27 @@
 
 - name: Upgrade installed packages
   apt: upgrade=yes
+
+- name: Install MOTD 1/3
+  copy:
+    src: 05-hostname
+    dest: /etc/update-motd.d/05-hostname
+    owner: charlie
+    group: charlie
+    mode: 0755
+
+- name: Install MOTD 2/3
+  copy:
+    src: 60-services
+    dest: /etc/update-motd.d/60-services
+    owner: charlie
+    group: charlie
+    mode: 0755
+
+- name: Install MOTD 3/3
+  copy:
+    src: 62-zpool
+    dest: /etc/update-motd.d/62-zpool
+    owner: charlie
+    group: charlie
+    mode: 0755
