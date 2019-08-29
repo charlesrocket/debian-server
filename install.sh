@@ -15,4 +15,8 @@ else
     echo "Ansible already installed"
 fi
 
+#####################################
+# Display real installation process #
+echo ""
 echo "DONE"
+echo ""
