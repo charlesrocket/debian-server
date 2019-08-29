@@ -1,0 +1,185 @@
+---
+
+- name: Ubuntu playbook
+  hosts: localhost
+  roles:
+    # Common roles
+    # - { role: locales, become: true }
+    # - { role: common, become: true }
+    - { role: vim }
+    # - { role: zsh, become: true }
+    - { role: oh-my-zsh }
+    - { role: tmux }
+    # - { role: dotfiles, become: true }
+    # - { role: java-openjdk, become: true }
+    # - { role: phantomjs, become: true }
+    # - { role: projects-installer }
+    # Server roles
+    # - { role: apache2, become: true }
+    # - { role: apache2-php, become: true }
+    # - { role: beanstalkd, become: true }
+    # - { role: blackfire, become: true }
+    # - { role: composer, become: true }
+    - { role: docker, become: true }
+    - { role: exfat-support, become: true }
+    # - { role: faenza }
+    # - { role: elasticsearch, become: true }
+    # - { role: exim, become: true }
+    - { role: fail2ban, become: true }
+    # - { role: gvm, become: true }
+    # - { role: hhvm, become: true }
+    # - { role: mailcatcher, become: true }
+    # - { role: mailhog, become: true }
+    # - { role: memcached, become: true }
+    # - { role: mysql57, become: true }
+    # - { role: mysql56, become: true }
+    # - { role: nginx, become: true }
+    # - { role: nginx-php-fpm, become: true }
+    # - { role: nodejs, become: true }
+    # - { role: php, become: true }
+    # - { role: php-pecl, become: true }
+    # - { role: php-phar-tools, become: true }
+    # - { role: python, become: true }
+    # - { role: postman, become: true }
+    # - { role: redis, become: true }
+    - { role: rbenv, become: true }
+    - { role: ssh, become: true }
+    # Desktop roles
+    # - { role: audacious, become: true }
+    # - { role: audacity, become: true }
+    # - { role: desktop, become: true }
+    # - { role: desktop-cleanup, become: true }
+    # - { role: desktop-autostart }
+    # - { role: desktop-preferences-unity }
+    # - { role: adapta-theme, become: true }
+    # - { role: albert, become: true }
+    # - { role: altyo, become: true }
+    # - { role: arc-theme, become: true }
+    # - { role: atom, become: true }
+    # - { role: bless, become: true }
+    # - { role: blender, become: true }
+    # - { role: bleachbit, become: true }
+    # - { role: brasero, become: true }
+    # - { role: brave-browser, become: true }
+    # - { role: caffeine , become: true }
+    # - { role: chrome, become: true }
+    # - { role: chromium, become: true }
+    # - { role: cheese, become: true }
+    # - { role: classicmenu-indicator , become: true }
+    # - { role: clipit , become: true }
+    # - { role: cpufrequency-indicator , become: true }
+    # - { role: curl, become: true }
+    # - { role: claws-mail, become: true }
+    # - { role: compton, become: true }
+    # - { role: copyq, become: true }
+    # - { role: dbeaver, become: true }
+    # - { role: dconf-editor, become: true }
+    # - { role: double-commander, become: true }
+    # - { role: diffpdf, become: true }
+    # - { role: dvdisaster, become: true }
+    # - { role: font-viewer, become: true }
+    # - { role: ffmpeg, become: true }
+    # - { role: filezilla, become: true }
+    # - { role: firefox, become: true }
+    # - { role: flatabulous, become: true }
+    # - { role: gdrive, become: true }
+    # - { role: geary, become: true }
+    # - { role: gconf-editor, become: true }
+    # - { role: gparted, become: true }
+    # - { role: gnome-shell-extensions }
+    # - { role: gnome-system-tools, become: true }
+    # - { role: gnome-tweak, become: true }
+    # - { role: gimp, become: true }
+    - { role: git }
+    # - { role: gsview, become: true }
+    # - { role: grub-customizer, become: true }
+    - { role: htop, become: true }
+    # - { role: hubic, become: true }
+    # - { role: indicator-sysmonitor, become: true }
+    # - { role: imagemagick, become: true }
+    # - { role: inkscape, become: true }
+    # - { role: jackeq, become: true }
+    # - { role: jkmeter, become: true }
+    # - { role: ksuperkey, become: true }
+    # - { role: kiki, become: true }
+    # - { role: libreoffice, become: true }
+    # - { role: lyx, become: true }
+    # - { role: maim, become: true }
+    # - { role: min, become: true }
+    # - { role: marblemouse, become: true }
+    # - { role: meld, become: true }
+    # - { role: meterbridge, become: true }
+    # - { role: mypaint, become: true }
+    # - { role: mysql-workbench, become: true }
+    # - { role: nautilus-plugins, become: true }
+    # - { role: nemo, become: true }
+    # - { role: nvidia, become: true }
+    - { role: netcat, become: true }
+    # - { role: notepadqq, become: true }
+    # - { role: notify-osd, become: true }
+    # - { role: pavumeter, become: true }
+    # - { role: pulseaudio, become: true }
+    # - { role: pulseaudio-equalizer, become: true }
+    # - { role: psensor , become: true }
+    # - { role: qjackctl, become: true }
+    # - { role: qutebrowser, become: true }
+    # - { role: remarkable, become: true }
+    # - { role: remmina, become: true }
+    # - { role: ripgrep, become: true }
+    # - { role: rofi, become: true }
+    # - { role: samba, become: true }
+    # - { role: shutter, become: true }
+    # - { role: sift, become: true }
+    # - { role: slop, become: true }
+    # - { role: skype, become: true }
+    # - { role: slack, become: true }
+    # - { role: smartgit, become: true }
+    # - { role: spotify, become: true }
+    # - { role: simple-screen-recorder, become: true }
+    # - { role: screenruler, become: true }
+    # - { role: smplayer, become: true }
+    # - { role: spe, become: true }
+    # - { role: soundconverter, become: true }
+    # - { role: sound-juicer, become: true }
+    # - { role: sound-juicer, become: true }
+    # - { role: sound-juicer, become: true }
+    # - { role: sound-juicer, become: true }
+    # - { role: startup }
+    # - { role: system-monitor-extension }
+    # - { role: synaptic, become: true }
+    # - { role: sublime3, become: true }
+    # - { role: sunflower, become: true }
+    # - { role: teamviewer, become: true }
+    # - { role: telnet, become: true }
+    # - { role: thunderbird, become: true }
+    # - { role: transmission, become: true }
+    # - { role: unetbootin, become: true }
+    # - { role: ultra-flat-icons, become: true }
+    # - { role: urxvt-perls }
+    # - { role: vagrant, become: true }
+    - { role: virtualbox, become: true }
+    # - { role: vlc, become: true }
+    # - { role: vokoscreen, become: true }
+    # - { role: wine, become: true }
+    # - { role: workrave, become: true }
+    - { role: wget, become: true }
+    # - { role: workday }
+    # - { role: xfce-dockbarx, become: true }
+    # - { role: xmind, become: true }
+    # - { role: xchat, become: true }
+    # - { role: youtube-dl, become: true }
+    - { role: 7zip, become: true }
+    # bspwm
+    # - { role: sxhkd, become: true }
+    # - { role: bspwm, become: true }
+    # - { role: bspwm-panel, become: true }
+    # - { role: bspwm-environment, become: true }
+    # User roles
+    # - { role: gulp}
+    # - { role: browsersync }
+    # - { role: bower }
+    # - { role: webpack }
+
+    # Settings
+    - { role: gnome-settings }
+    - { role: gedit }
