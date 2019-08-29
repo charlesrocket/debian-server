@@ -11,6 +11,9 @@
     - curl
     - gnupg-agent
     - software-properties-common
+    - python3-pip
+    - python3-setuptools
+    - virtualenv
 
 - name: Add Docker repository
   apt_repository: repo="deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable"
