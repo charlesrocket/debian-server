@@ -1,0 +1,53 @@
+---
+
+- name: Install connector for in-browser management
+  apt: pkg=chrome-gnome-shell state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  become: true
+
+- name: Copy auto-installer script to home dir
+  copy:
+    src: gnomeshell-extension-manage.sh
+    dest: "{{ ansible_env.HOME }}/gnomeshell-extension-manage.sh"
+    mode: "0770"
+
+- name: Install Gnome shell extensions
+  shell: |
+    ./gnomeshell-extension-manage.sh --install --extension-id {{ item.id }}
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.extensions-installed-lock"
+  with_items:
+    - { id: 841, name: "Freon" }
+#   - { id: 517, name: "Caffeine" }
+    - { id: 1082, name: "cpufreq - konkor" }
+    - { id: 750, name: "Open Weather" }
+    - { id: 906, name: "Sound Input & Output Device Chooser" }
+    - { id: 1031, name: "Top Icons Plus" }
+    - { id: 1446, name: "Transparent Window Moving" }
+    - { id: 1485, name: "Workspace Matrix" }
+    - { id: 97, name: "Coverflow Alt-Tab" }
+    - { id: 355, name: "Status Area Horizontal Spacing" }
+    - { id: 884, name: "Disper Menu" } # Multi-monitor setup switching
+    - { id: 1683, name: "Draw On Your Screen" }
+    - { id: 921, name: "Multi Monitos Add-On" }
+
+- name: Configure Gnome Shell extensions
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: "/org/gnome/shell/extensions/freon/position-in-panel", value: "'left'" }
+    - { key: "/org/gnome/shell/extensions/openweather/city", value: "'4.64868455,-74.1058138743454>Bogotá, Distrito Capital, Colombia >-1'" }
+    - { key: "/org/gnome/shell/extensions/openweather/position-in-panel", value: "'center'" }
+    - { key: "/org/gnome/shell/extensions/openweather/unit", value: "'celsius'" }
+    - { key: "/org/gnome/shell/extensions/openweather/pressure-unit", value: "'mmHg'" }
+    - { key: "/org/gnome/shell/extensions/openweather/wind-speed-unit", value: "'kph'" }
+    - { key: "/org/gnome/shell/extensions/transparent-window-moving/transition-time", value: "0.25" }
+    - { key: "/org/gnome/shell/extensions/status-area-horizontal-spacing/hpadding", value: "4" }
+
+- name: Signal that extensions are already installed
+  shell: |
+    touch .extensions-installed-lock
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.extensions-installed-lock"

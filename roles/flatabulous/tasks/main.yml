@@ -1,0 +1,17 @@
+---
+
+- name: Install Flatabulous
+  git: repo=https://github.com/anmoljagetia/Flatabulous dest=/usr/share/themes/Flatabulous update=yes accept_hostkey=yes
+  register: flatabulous_git
+
+- name: Set GTK Theme to Flatabulous
+  command: "gsettings set org.gnome.desktop.interface gtk-theme Flatabulous"
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  changed_when: flatabulous_git.changed
+
+- name: Set Windows Manager Theme to Flatabulous
+  command: "gsettings set org.gnome.desktop.wm.preferences theme Flatabulous"
+  become: true
+  become_user: "{{ ansible_env.USER }}"
+  changed_when: flatabulous_git.changed

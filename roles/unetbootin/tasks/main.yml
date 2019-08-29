@@ -1,0 +1,7 @@
+---
+
+- name: Add UNetbootin repository
+  apt_repository: repo="ppa:gezakovacs/ppa" state=present update_cache=yes
+
+- name: Install UNetbootin
+  apt: name=unetbootin state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

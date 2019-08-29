@@ -1,0 +1,4 @@
+---
+
+- name: Install BleachBit 
+  apt: deb="https://download.bleachbit.org/bleachbit_2.2_all_ubuntu1804.deb"

@@ -1,0 +1,7 @@
+---
+
+- name: Install NVidia Driver
+  apt: pkg=nvidia-driver-390 state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Install NVIDIA X Server Settings
+  apt: pkg=nvidia-settings state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

@@ -1,0 +1,10 @@
+---
+
+- name: Download Postman
+  unarchive: src="https://dl.pstmn.io/download/latest/linux64" dest=/opt remote_src=yes
+
+- name: Create symbolic link 
+  file: src="/opt/Postman/Postman" dest="/usr/bin/postman" state=link
+
+- name: Create Postman desktop file
+  copy: src="postman.desktop" dest="/usr/share/applications/postman.desktop" owner=root group=root mode="u=rw,go=r"

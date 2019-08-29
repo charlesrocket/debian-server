@@ -1,0 +1,17 @@
+---
+
+- name: Add Brave Browser key
+  apt_key: url=https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+
+- name: Install list of required packages
+  apt: name="{{ item }}" state=present update_cache=yes
+  with_items:
+    - apt-transport-https
+
+- name: Add Brave Browser repository
+  apt_repository: repo="deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ {{ansible_distribution_release}} main"
+
+- name: Install Brave Browser
+  apt: name="{{ item }}" state=present update_cache=yes
+  with_items:
+    - brave-browser

@@ -1,0 +1,7 @@
+---
+
+- name: Install Audacity
+  apt: pkg=audacity state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Install LAME, FFmpeg and other media encoding/decoding tools
+  apt: pkg=ubuntu-restricted-extras state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

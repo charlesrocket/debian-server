@@ -1,0 +1,27 @@
+---
+
+- name: Install Packages for Oh My Zsh
+  apt: pkg="{{ item }}" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - zsh
+    - netcat
+  become: yes
+
+- name: Clone Oh my zsh
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+    update: yes
+    accept_hostkey: yes
+  with_items:
+    - { repo: "https://github.com/robbyrussell/oh-my-zsh.git", name: .oh-my-zsh }
+
+- name: "Make ZSH default shell for user {{ ansible_env.USER }}"
+  user: name={{ ansible_env.USER }} shell=/bin/zsh
+  become: yes
+
+- name: Add .zshrc
+  copy:
+    src: zshrc
+    dest: "{{ ansible_env.HOME }}/.zshrc"
+    mode: '0660'

@@ -1,0 +1,4 @@
+---
+
+- name: Install GConf Editor
+  apt: pkg=gconf-editor state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

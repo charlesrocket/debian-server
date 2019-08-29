@@ -1,0 +1,16 @@
+---
+
+- name: Create the "mbin" directory
+  file: path="{{ ansible_env.HOME }}/mbin" state=directory
+
+- name: Install Blender 2.79
+  unarchive:
+    src: "https://download.blender.org/release/Blender2.79/blender-2.79b-linux-glibc219-x86_64.tar.bz2"
+    dest: "{{ ansible_env.HOME }}/mbin"
+    remote_src: yes
+
+- name: Install Blender 2.80 Beta
+  unarchive:
+    src: "https://builder.blender.org/download/blender-2.80-d30f72dfd8ac-linux-glibc224-x86_64.tar.bz2"
+    dest: "{{ ansible_env.HOME }}/mbin"
+    remote_src: yes

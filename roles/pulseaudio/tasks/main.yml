@@ -1,0 +1,7 @@
+---
+
+- name: Install PulseAudio
+  apt: pkg=pulseaudio state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Install PavuControl
+  apt: pkg=pavucontrol state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

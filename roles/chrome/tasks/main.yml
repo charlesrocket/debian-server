@@ -1,0 +1,29 @@
+---
+
+- name: Add Google Chrome key
+  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+
+- name: Add Google Chrome repository
+  apt_repository: repo="deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" state=present update_cache=yes
+
+- name: Install Google Ghrome
+  apt: name=google-chrome-stable state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Create Google Chrome extensions directory
+  file: path="/usr/share/google-chrome/extensions" state=directory
+
+# See https://developer.chrome.com/extensions/external_extensions#preferences
+- name: Create Google Chrome JSON file to install extensions
+  template:
+    src: chrome-extensions.json.j2
+    dest: "/usr/share/google-chrome/extensions//{{ item }}.json"
+  with_items:
+    - dbepggeogbaibhgnhhndojpepiihcmeb # Vimium
+    - kejbdjndbnbjgmefkgdddjlbokphdefk # Tag Assistant (by Google)
+    - bfbameneiokkgbdmiekhjnmfkcnldhhm # Web Developer (Chris Pederick)
+    - fngmhnnpilhplaeedifhccceomclgfbg # EditThisCookie
+    - dhdpoembhlojpmehepeadblhglloobao # Dreditor
+    - eadndfjplgieldjbigjakmdgkmoaaaoc # Xdebug helper
+    - dhdgffkkebhmkfjojejmpbldmpobfkfo # Tampermonkey
+    - lbehdhpgigdlinfkidifkbhjnaglfojc # Domain Switcher
+    - djflhoibgkdhkhhcedjiklpkjnoahfmg # Chrome UA Spoofer

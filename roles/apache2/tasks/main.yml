@@ -1,0 +1,34 @@
+---
+
+- name: Install Apache2
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - apache2
+    - apache2-utils
+    - apachetop
+
+- name: Install Apache2 mpms
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  with_items:
+    - apache2-mpm-prefork
+    - apache2-mpm-worker
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '14.04'
+
+- name: Enable Apache2 modules
+  apache2_module: state=present name={{ item }}
+  with_items: "{{ apache2.modules }}"
+
+- name: Remove default Apache2 vhosts
+  file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
+
+- name: Remove default Apache2 ssl vhosts
+  file: path=/etc/apache2/sites-enabled/default-ssl.conf state=absent
+
+- name: Configure Apache2 user and group
+  lineinfile: dest=/etc/apache2/envvars regexp="^export {{ item.param }}=" line="export {{ item.param }}={{ item.value }}"
+  with_items :
+    - { param: APACHE_RUN_USER, value: "{{ apache2.run_as }}" }
+    - { param: APACHE_RUN_GROUP, value: "{{ apache2.run_as }}" }
+
+- name: "Ensure Apache2 is {{ apache2.start | ternary('started','stopped') }}"
+  service: name=apache2 state={{ apache2.start | ternary('restarted','stopped') }} enabled={{ apache2.service_enabled }}

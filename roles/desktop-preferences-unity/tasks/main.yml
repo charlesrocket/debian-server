@@ -1,0 +1,162 @@
+---
+# Run this commands to get make a diff of settings
+#   gsettings list-recursively > original.txt
+#   diff <(cat original.txt) <(gsettings list-recursively)
+
+- name: Install Unity tweak tool
+  apt: pkg=unity-tweak-tool state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Set global keybindings
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "[]"
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shift>Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip '<Ctrl><Shift>Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot 'Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip '<Ctrl>Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot '<Alt>Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip '<Ctrl><Alt>Print'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier ''
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-in ''
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-out ''
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys screenreader ''
+    - gsettings set org.gnome.desktop.wm.keybindings maximize "['<Control><Super>Up']"
+    - gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Control><Super>Down']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-group "[]"
+    - gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Shift><Control><Alt>Down']"
+    - gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Control><Alt>Left']"
+    - gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Shift><Control><Alt>Right']"
+    - gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Shift><Control><Alt>Up']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Alt>Down']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
+    - gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
+    - gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
+    - gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "['<Super>s']"
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Control><Alt>r'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Super>l'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys home '<Super>e'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Moniteur système'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'gnome-system-monitor'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>Delete'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Chromium focus and new tab'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command '/home/{{ ansible_env.USER }}/bin/chromium-focus-and-new-tab'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>x'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Terminal launch or focus'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command '/home/{{ ansible_env.USER }}/bin/terminal-launch-or-focus'
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Super>r'
+
+- name: Set Unity preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set com.canonical.Unity.Lenses home-lens-default-view "['applications.scope']"
+    - gsettings set com.canonical.Unity.Lenses always-search "['applications.scope']"
+    - gsettings set com.canonical.Unity form-factor 'Netbook'
+    - gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
+    - gsettings set org.gnome.desktop.background primary-color '#000000'
+    - gsettings set org.gnome.desktop.session idle-delay "uint32 3600"
+    - gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'medium'
+    - gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'grayscale'
+    - gsettings set com.canonical.desktop.interface scrollbar-mode 'normal'
+    - gsettings set com.canonical.Unity.Launcher favorites "['application://nemo.desktop', 'application://chromium-browser.desktop', 'application://sublime-text.desktop', 'application://atom.desktop', 'application://gnome-terminal.desktop', 'application://thunderbird.desktop', 'application://filezilla.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices', 'unity://desktop-icon']"
+
+- name: Set workspaces preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2
+    - gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
+    - gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
+
+- name: Set Nautilus preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+    - gsettings set org.gnome.nautilus.icon-view default-zoom-level 'smaller'
+    - gsettings set org.gnome.nautilus.list-view default-zoom-level 'smaller'
+    - gsettings set org.gnome.nautilus.list-view use-tree-view true
+    - gsettings set org.gnome.nautilus.preferences thumbnail-limit "uint64 5242880"
+    - gsettings set org.gnome.nautilus.icon-view thumbnail-size 64
+    - gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 24
+
+- name: Set Rhythmbox preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.rhythmbox.player play-order 'linear-loop'
+    - gsettings set org.gnome.rhythmbox.player use-xfade-backend true
+    - gsettings set org.gnome.rhythmbox.player transition-time 1
+    - gsettings set org.gnome.rhythmbox.sources visible-columns "['post-time', 'artist', 'duration', 'track-number', 'album', 'date']"
+    - gsettings set org.gnome.rhythmbox.podcast download-interval 'daily'
+
+- name: Set Gedit preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.gedit.preferences.editor bracket-matching true
+    - gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+    - gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
+    - gsettings set org.gnome.gedit.preferences.editor editor-font 'Hack 10'
+    - gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
+    - gsettings set org.gnome.gedit.preferences.editor insert-spaces true
+    - gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
+    - gsettings set org.gnome.gedit.preferences.editor tabs-size "uint32 4"
+    - gsettings set org.gnome.gedit.preferences.editor use-default-font false
+    - gsettings set org.gnome.gedit.preferences.editor wrap-mode 'none'
+
+- name: Set Calc preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.calculator accuracy 8
+    - gsettings set org.gnome.calculator button-mode 'advanced'
+    - gsettings set org.gnome.calculator number-format 'fixed'
+    - gsettings set org.gnome.calculator source-units 'EUR'
+    - gsettings set org.gnome.calculator target-units 'USD'
+
+- name: Set Terminal preferences
+  command: "{{ item }}"
+  with_items:
+    - gsettings set org.gnome.Terminal.Legacy.Settings new-terminal-mode 'tab'
+    - gsettings set org.gnome.Terminal.Legacy.Settings tab-position 'top'
+    - gsettings set org.gnome.Terminal.Legacy.Settings encodings "['UTF-8']"
+    - gsettings set org.gnome.Terminal.Legacy.Settings shortcuts-enabled true
+    - gsettings set org.gnome.Terminal.Legacy.Settings tab-policy 'automatic'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-window '<Ctrl>n'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-tab '<Ctrl>t'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-tab '<Ctrl><Shift>w'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ close-window '<Ctrl>q'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-1 '<Primary>ampersand'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-2 '<Primary>eacute'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-3 '<Primary>quotedbl'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-4 '<Primary>apostrophe'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-5 '<Primary>parenleft'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-6 '<Primary>minus'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-7 '<Primary>egrave'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-8 '<Primary>underscore'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-9 '<Primary>ccedilla'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ switch-to-tab-10 '<Primary>agrave'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Control>Page_Down'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Control>Page_Up'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ copy '<Ctrl><Shift>c'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ paste '<Ctrl><Shift>v'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find '<Control><Shift>F'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-clear '<Control><Shift>J'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-next '<Control><Shift>G'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ find-previous '<Control><Shift>H'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ full-screen 'F11'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ reset '<Primary>l'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ reset-and-clear '<Primary><Shift>l'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-in '<Ctrl>plus'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-normal '<Ctrl>0'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ zoom-out '<Ctrl>minus'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ detach-tab 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ help 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-left 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ move-tab-right 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ new-profile 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ save-contents 'disabled'
+    - gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ toggle-menubar 'disabled'
+
+- name: Update Terminal desktop file to run maximized
+  replace: dest=/usr/share/applications/gnome-terminal.desktop regexp='^Exec=(.+)$' replace='Exec=gnome-terminal --window --maximize'
+  become: true

@@ -1,0 +1,23 @@
+---
+
+- name: Install Chromium
+  apt: name=chromium-browser state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Create Chromium extensions directory
+  file: path="/usr/share/chromium-browser/extensions" state=directory
+
+# See https://developer.chrome.com/extensions/external_extensions#preferences
+- name: Create Chromium JSON file to install extensions
+  template:
+    src: chrome-extensions.json.j2
+    dest: "/usr/share/chromium-browser/extensions/{{ item }}.json"
+  with_items:
+    - dbepggeogbaibhgnhhndojpepiihcmeb # Vimium
+    - kejbdjndbnbjgmefkgdddjlbokphdefk # Tag Assistant (by Google)
+    - bfbameneiokkgbdmiekhjnmfkcnldhhm # Web Developer (Chris Pederick)
+    - fngmhnnpilhplaeedifhccceomclgfbg # EditThisCookie
+    - dhdpoembhlojpmehepeadblhglloobao # Dreditor
+    - eadndfjplgieldjbigjakmdgkmoaaaoc # Xdebug helper
+    - dhdgffkkebhmkfjojejmpbldmpobfkfo # Tampermonkey
+    - lbehdhpgigdlinfkidifkbhjnaglfojc # Domain Switcher
+    - djflhoibgkdhkhhcedjiklpkjnoahfmg # Chrome UA Spoofer

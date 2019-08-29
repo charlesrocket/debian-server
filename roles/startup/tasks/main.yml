@@ -1,0 +1,9 @@
+---
+
+- name: Add startup.sh to home dir
+  copy:
+    src: startup.sh
+    dest: "{{ ansible_env.HOME }}/startup.sh"
+    mode: '0770'
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"

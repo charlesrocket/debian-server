@@ -1,0 +1,25 @@
+---
+
+- name: Install required packages
+  apt: pkg="python-psutil" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  become: true
+
+- name: Set Keyboard Layout
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'us'), ('xkb', 'es')]"
+
+- name: Set buttons on top-left.
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/button-layout"
+    value: "'close,minimize,maximize:'"
+
+- name: Set Shift+Windows to show all apps grid.
+  dconf:
+    key: "/org/gnome/shell/keybindings/toggle-application-view"
+    value: "['<Shift><Super>']"
+
+- name: Set Windows+Drag to move any window.
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/begin-move"
+    value: "['<Super>']"

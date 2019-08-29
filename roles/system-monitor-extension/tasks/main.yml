@@ -1,0 +1,33 @@
+---
+
+- name: Install System Monitor Extension
+  apt: pkg=gnome-shell-extension-system-monitor state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  become: true
+
+- name: System Monitor - Basic Config
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: "/org/gnome/shell/extensions/system-monitor/icon-display", value: "false" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/cpu-display", value: "true" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/cpu-graph-width", value: "35" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/cpu-refresh-time", value: "500" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/cpu-show-text", value: "false" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/disk-display", value: "true" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/disk-graph-width", value: "35" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/disk-refresh-time", value: "1000" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/disk-show-text", value: "false" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/disk-usage-style", value: "'bar'" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/memory-display", value: "true" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/memory-graph-width", value: "35" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/memory-refresh-time", value: "5000" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/memory-show-text", value: "false" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/net-display", value: "true" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/net-graph-width", value: "35" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/net-refresh-time", value: "500" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/net-show-text", value: "false" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/swap-display", value: "true" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/swap-graph-width", value: "35" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/swap-refresh-time", value: "5000" }
+    - { key: "/org/gnome/shell/extensions/system-monitor/swap-show-text", value: "false" }

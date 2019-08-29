@@ -1,0 +1,4 @@
+---
+
+- name: Install Curl
+  apt: pkg=curl state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

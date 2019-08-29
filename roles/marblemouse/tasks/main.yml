@@ -1,0 +1,7 @@
+---
+
+- name: Add marblemouse.conf
+  copy:
+    src: marblemouse.conf
+    dest: "/usr/share/X11/xorg.conf.d/39-marblemouse.conf"
+    mode: '0644'

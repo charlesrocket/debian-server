@@ -1,0 +1,7 @@
+---
+
+- name: Install VirtualBox
+  apt: pkg=virtualbox state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Install VirtualBox Extension Pack
+  apt: pkg=virtualbox-ext-pack state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
