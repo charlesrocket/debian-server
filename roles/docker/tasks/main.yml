@@ -1,8 +1,5 @@
 ---
 
-- name: Add Docker key
-  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
-
 - name: Install list of required packages
   apt: name="{{ item }}" state=present update_cache=yes
   with_items:
@@ -14,6 +11,9 @@
     - python3-pip
     - python3-setuptools
     - virtualenv
+
+- name: Add Docker key
+  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
 
 - name: Add Docker repository
   apt_repository: repo="deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable"
