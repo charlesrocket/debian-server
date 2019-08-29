@@ -5,7 +5,7 @@
   roles:
     # Common roles
     # - { role: locales, become: true }
-    # - { role: common, become: true }
+    - { role: common, become: true }
     # - { role: vim }
     # - { role: zsh, become: true }
     - { role: oh-my-zsh }
