@@ -22,7 +22,6 @@
     - axel
     - build-essential
     - bzip2
-    - colortest
     - curl
     - diffutils
     - dos2unix
@@ -38,7 +37,6 @@
     - iftop
     - iotop
     - less
-    - lftp
     - make
     - nano
     - mc
@@ -50,7 +48,6 @@
     - pwgen
     - ranger
     - rar
-    - rsync
     - smbclient
     - software-properties-common
     - sshfs
