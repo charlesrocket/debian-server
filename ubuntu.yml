@@ -90,7 +90,7 @@
     # - { role: gnome-system-tools, become: true }
     # - { role: gnome-tweak, become: true }
     # - { role: gimp, become: true }
-    - { role: git }
+    # - { role: git }
     # - { role: gsview, become: true }
     # - { role: grub-customizer, become: true }
     - { role: htop, become: true }
