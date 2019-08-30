@@ -65,18 +65,18 @@
   copy:
     src: 05-hostname
     dest: /etc/update-motd.d/05-hostname
-    owner: {{ ansible_user_id }}
+    owner: "{{ ansible_user_id }}"
     mode: 0755
 
 - name: Install MOTD 2/2
   copy:
     src: 60-services
     dest: /etc/update-motd.d/60-services
-    owner: {{ ansible_user_id }}
+    owner: "{{ ansible_user_id }}"
     mode: 0755
 
 - name: Edit Bash prompt
   lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: "[[ -s ${pythonbrew.bashrc_path} ]] && source {pythonbrew.bashrc_path}"
-    owner: {{ ansible_user_id }}
+    owner: "{{ ansible_user_id }}"
