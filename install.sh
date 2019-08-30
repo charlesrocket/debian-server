@@ -6,3 +6,4 @@ sudo apt install python ansible -y
 echo ""
 echo "Done"
 echo ""
+echo "Enter 'ansible-playbook ubuntu.yml --ask-become-pass' to start"
