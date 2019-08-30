@@ -65,14 +65,12 @@
   copy:
     src: 05-hostname
     dest: /etc/update-motd.d/05-hostname
-    owner: charlie
-    group: charlie
+    owner: {{ ansible_user_id }}
     mode: 0755
 
 - name: Install MOTD 2/2
   copy:
     src: 60-services
     dest: /etc/update-motd.d/60-services
-    owner: charlie
-    group: charlie
+    owner: {{ ansible_user_id }}
     mode: 0755
