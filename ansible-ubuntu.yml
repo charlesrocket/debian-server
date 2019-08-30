@@ -181,5 +181,5 @@
     # - { role: webpack }
 
     # Settings
-    - { role: gnome-settings }
-    - { role: gedit }
+    # - { role: gnome-settings }
+    # - { role: gedit }
