@@ -1,5 +1,3 @@
 - name: Install exFAT support
-  apt: pkg="{{ item }}" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - exfat-fuse
-    - exfat-utils
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  loop: ['exfat-fuse', 'exfat-utils']

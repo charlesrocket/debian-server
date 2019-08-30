@@ -1,10 +1,8 @@
 ---
 
 - name: Install Packages for Tmux
-  apt: pkg="{{ item }}" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - tmux
-    - sudo
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  loop: ['tmux', 'sudo']
   become: yes
 
 - name: Add .tmux.conf
