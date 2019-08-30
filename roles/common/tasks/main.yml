@@ -38,5 +38,5 @@
 - name: Edit Bash prompt
   lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
-    line: '"export PS1="\[\e[31m\]x\[\e[m\]:\[\e[95m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
+    line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[95m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
