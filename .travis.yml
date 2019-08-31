@@ -24,6 +24,11 @@ dryrun:
   script:
     - ansible-playbook ubuntu.yml --check
 
+jobs:
+  include:
+     - <<: *syntaxcheck
+     - <<: *dryrun
+
 before_install:
   - sudo apt-get update -qq
 
