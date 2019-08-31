@@ -49,3 +49,8 @@
 
 - name: Su for admin group
   shell: "sudo dpkg-statoverride --update --add root admin 4750 /bin/su"
+
+- name: Restrict shared memory
+  lineinfile:
+    dest: /etc/fstab
+    line: "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0"
