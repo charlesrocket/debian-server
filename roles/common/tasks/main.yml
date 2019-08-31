@@ -40,3 +40,12 @@
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
+
+- name: Add admin group
+  shell: "sudo groupadd admin"
+
+- name: Populate admin group
+  shell: "sudo usermod -a -G admin {{ ansible_user_id }}"
+
+- name: Su for admin group
+  shell: "sudo dpkg-statoverride --update --add root admin 4750 /bin/su"
