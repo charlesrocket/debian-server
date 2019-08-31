@@ -1,5 +1,13 @@
 #!/bin/bash
+cat << "EOF"
 
+·▄▄▄▄  ▪  .▄▄ ·  ▄▄·
+██▪ ██ ██ ▐█ ▀. ▐█ ▌▪▪
+▐█· ▐█▌▐█·▄▀▀▀█▄██ ▄▄ ▄█▀▄
+██. ██ ▐█▌▐█▄▪▐█▐███▌▐█▌.▐▌
+▀▀▀▀▀• ▀▀▀ ▀▀▀▀ ·▀▀▀  ▀█▄▀▪
+
+EOF
 echo "Installing Ansible..."
 sudo apt update
 sudo apt install python ansible -y
