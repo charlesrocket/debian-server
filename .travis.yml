@@ -26,8 +26,8 @@ dryrun:
 
 jobs:
   include:
-     - <<: *syntaxcheck
-     - <<: *dryrun
+    - <<: *syntaxcheck
+    - <<: *dryrun
 
 before_install:
   - sudo apt-get update -qq
