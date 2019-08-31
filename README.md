@@ -12,4 +12,4 @@ cd disco-playbook
 ./install.sh
 ```
 
-_Edit `group_vars/all.yml` before starting the playbook_
+_Edit `group_vars/all.yml` before starting the playbook!_
