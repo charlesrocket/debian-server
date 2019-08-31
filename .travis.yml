@@ -14,7 +14,7 @@ stages:
   - dry run
   - check
 
-syntax check:
+syntaxcheck:
   stage: syntax check
   script:
     - ansible-playbook ubuntu.yml --syntax-check
