@@ -10,13 +10,23 @@ python:
 env:
   - ANSIBLE_VERSION=latest
 
+stages:
+  - dry run
+  - check
+
+syntax check:
+  stage: syntax check
+  script:
+    - ansible-playbook ubuntu.yml --syntax-check
+
+dryrun:
+  stage: dry run
+  script:
+    - ansible-playbook ubuntu.yml --check
+
 before_install:
   - sudo apt-get update -qq
 
 install:
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
-
-script:
-  - ansible-playbook ubuntu.yml --syntax-check
-  - ansible-playbook ubuntu.yml --check
