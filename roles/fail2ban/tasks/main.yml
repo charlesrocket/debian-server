@@ -10,4 +10,5 @@
   copy:
     src: /etc/fail2ban/jail.conf
     dest: /etc/fail2ban/jail.local
-    remote_src: no
+    owner: "{{ ansible_user_id }}"
+    mode: '0644'
