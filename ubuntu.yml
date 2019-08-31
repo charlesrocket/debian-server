@@ -9,7 +9,7 @@
     # - { role: vim }
     # - { role: zsh, become: true }
     # - { role: oh-my-zsh }
-    - { role: tmux }
+    # - { role: tmux }
     # - { role: dotfiles, become: true }
     # - { role: java-openjdk, become: true }
     # - { role: phantomjs, become: true }
