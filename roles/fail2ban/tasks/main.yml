@@ -10,4 +10,4 @@
   copy:
     src: /etc/fail2ban/jail.conf
     dest: /etc/fail2ban/jail.local
-    when: not check_mode
+    remote_src: no
