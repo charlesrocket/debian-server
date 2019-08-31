@@ -5,10 +5,18 @@ dist: bionic
 language: python
 python:
   - "3.7"
-  - "nightly"
 
 env:
   - ANSIBLE_VERSION=latest
+
+jobs:
+  include:
+    - stage: syntax check
+      script:
+        - ansible-playbook ubuntu.yml --syntax-check
+#   - stage: dry run
+#     script:
+#       - ansible-playbook ubuntu.yml --check
 
 before_install:
   - sudo apt-get update -qq
@@ -16,6 +24,3 @@ before_install:
 install:
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
-
-script:
-  - ansible-playbook ubuntu.yml --syntax-check
