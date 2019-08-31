@@ -1,3 +1,5 @@
+<img src="screenshot.jpg" alt="screenshot">
+
 # disco-playbook
 
 Ansible playbook for Ubuntu 19.04 server
