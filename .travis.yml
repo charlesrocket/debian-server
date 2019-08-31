@@ -11,8 +11,8 @@ env:
   - ANSIBLE_VERSION=latest
 
 stages:
+  - syntax check
   - dry run
-  - check
 
 syntaxcheck:
   stage: syntax check
