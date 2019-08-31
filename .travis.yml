@@ -14,9 +14,9 @@ jobs:
     - stage: syntax check
       script:
         - ansible-playbook ubuntu.yml --syntax-check
-    - stage: dry run
-      script:
-        - ansible-playbook ubuntu.yml --check
+#   - stage: dry run
+#     script:
+#       - ansible-playbook ubuntu.yml --check
 
 before_install:
   - sudo apt-get update -qq
