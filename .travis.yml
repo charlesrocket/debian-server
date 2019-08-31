@@ -10,24 +10,14 @@ python:
 env:
   - ANSIBLE_VERSION=latest
 
-stages:
-  - syntax check
-  - dry run
-
-syntaxcheck:
-  stage: syntax check
-  script:
-    - ansible-playbook ubuntu.yml --syntax-check
-
-dryrun:
-  stage: dry run
-  script:
-    - ansible-playbook ubuntu.yml --check
-
 jobs:
   include:
-    - <<: *syntaxcheck
-    - <<: *dryrun
+    - stage: syntax check
+      script:
+        - ansible-playbook ubuntu.yml --syntax-check
+    - stage: dry run
+      script:
+        - ansible-playbook ubuntu.yml --check
 
 before_install:
   - sudo apt-get update -qq
