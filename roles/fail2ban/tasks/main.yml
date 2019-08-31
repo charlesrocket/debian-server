@@ -12,3 +12,4 @@
     dest: /etc/fail2ban/jail.local
     owner: "{{ ansible_user_id }}"
     mode: '0644'
+    check_mode: no
