@@ -19,4 +19,4 @@ install:
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
 
 script:
-  - ansible-playbook -v ubuntu.yml --syntax-check
+  - ansible-playbook ubuntu.yml --syntax-check
