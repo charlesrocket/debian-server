@@ -6,7 +6,7 @@ Ansible playbook for Ubuntu 19.04 server
 
 ### Start
 
-Edit `group_vars/all.yml` and:
+_Edit `group_vars/all.yml` before starting the playbook_
 
 ```
 git clone https://https://github.com/charlesrocket/disco-playbook
