@@ -10,5 +10,4 @@
   copy:
     src: /etc/fail2ban/jail.conf
     dest: /etc/fail2ban/jail.local
-    owner: "{{ ansible_user_id }}"
     when: not check_mode
