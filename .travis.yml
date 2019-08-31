@@ -19,3 +19,4 @@ install:
 
 script:
   - ansible-playbook ubuntu.yml --syntax-check
+  - ansible-playbook ubuntu.yml --check
