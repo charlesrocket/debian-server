@@ -2,7 +2,7 @@
 
 # disco-playbook
 
-Ansible playbook for Ubuntu 19.04 server
+Ansible playbook for **Ubuntu 19.04** server
 
 ### Start
 
