@@ -27,6 +27,7 @@
     dest: /etc/update-motd.d/05-hostname
     owner: "{{ ansible_user_id }}"
     mode: 0755
+    state: present
 
 - name: Install MOTD 2/2
   copy:
@@ -34,12 +35,14 @@
     dest: /etc/update-motd.d/60-services
     owner: "{{ ansible_user_id }}"
     mode: 0755
+    state: present
 
 - name: Edit Bash prompt
   lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
+    state: present
 
 - name:  Check for "admin" group
   group:
