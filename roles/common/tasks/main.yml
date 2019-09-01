@@ -65,3 +65,20 @@
   lineinfile:
     dest: /etc/fstab
     line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
+
+- name: Allow ssh
+  ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Limit ssh
+  ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+  notify:
+    - restart ufw
+
+- name: Enable UFW
+  ufw:
+    state: enabled
