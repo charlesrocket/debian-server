@@ -53,4 +53,4 @@
 - name: Restrict shared memory
   lineinfile:
     dest: /etc/fstab
-    line: "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0"
+    line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
