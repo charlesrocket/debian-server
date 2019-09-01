@@ -53,7 +53,10 @@
     append: yes
 
 - name: Su for admin group
-  shell: "sudo dpkg-statoverride --update --add root admin 4750 /bin/su"
+  shell: "dpkg-statoverride --update --add root admin 4750 /bin/su"
+  become: true
+  register: command_result
+  failed_when: "'FAILED' in command_result.stderr"
 
 - name: Restrict shared memory
   lineinfile:
