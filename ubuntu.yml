@@ -94,20 +94,17 @@
     - { role: htop, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }
-    # - { role: imagemagick, become: true }
     # - { role: inkscape, become: true }
     # - { role: jackeq, become: true }
     # - { role: jkmeter, become: true }
     # - { role: ksuperkey, become: true }
     # - { role: kiki, become: true }
-    # - { role: libreoffice, become: true }
     # - { role: lyx, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }
     # - { role: marblemouse, become: true }
     # - { role: meld, become: true }
     # - { role: meterbridge, become: true }
-    # - { role: mypaint, become: true }
     # - { role: mysql-workbench, become: true }
     # - { role: nautilus-plugins, become: true }
     # - { role: nemo, become: true }
@@ -129,10 +126,7 @@
     # - { role: shutter, become: true }
     # - { role: sift, become: true }
     # - { role: slop, become: true }
-    # - { role: skype, become: true }
-    # - { role: slack, become: true }
     # - { role: smartgit, become: true }
-    # - { role: spotify, become: true }
     # - { role: simple-screen-recorder, become: true }
     # - { role: screenruler, become: true }
     # - { role: smplayer, become: true }
