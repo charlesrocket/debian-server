@@ -62,8 +62,6 @@
     # - { role: brasero, become: true }
     # - { role: brave-browser, become: true }
     # - { role: caffeine , become: true }
-    # - { role: chrome, become: true }
-    # - { role: chromium, become: true }
     # - { role: cheese, become: true }
     # - { role: classicmenu-indicator , become: true }
     # - { role: clipit , become: true }

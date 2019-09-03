@@ -4,10 +4,6 @@
 aptcachetime: 3600
 locale: "en_US.UTF-8"
 timezone: "America/Los_Angeles"
-chromium:
-  set_default: true
-  policy: false
-  extensions: false
 desktop_autostart:
   add:
     - { name: Tilda , exec: /usr/bin/tilda }
