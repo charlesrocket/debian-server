@@ -27,7 +27,6 @@
     - cmus
     # Videos player
     - mpv
-    - vlc
     # Network management
     - network-manager
     - network-manager-gnome
