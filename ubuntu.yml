@@ -131,7 +131,6 @@
     # - { role: screenruler, become: true }
     # - { role: smplayer, become: true }
     # - { role: spe, become: true }
-    # - { role: soundconverter, become: true }
     # - { role: sound-juicer, become: true }
     # - { role: sound-juicer, become: true }
     # - { role: sound-juicer, become: true }
