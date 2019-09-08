@@ -128,10 +128,6 @@
     # - { role: screenruler, become: true }
     # - { role: smplayer, become: true }
     # - { role: spe, become: true }
-    # - { role: sound-juicer, become: true }
-    # - { role: sound-juicer, become: true }
-    # - { role: sound-juicer, become: true }
-    # - { role: sound-juicer, become: true }
     # - { role: startup }
     # - { role: system-monitor-extension }
     # - { role: synaptic, become: true }
