@@ -1,4 +1,0 @@
----
-
-- name: Install Pulseaudio Volume Meter
-  apt: pkg=pavumeter state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
