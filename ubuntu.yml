@@ -117,7 +117,6 @@
     # - { role: pulseaudio-equalizer, become: true }
     # - { role: psensor , become: true }
     # - { role: qjackctl, become: true }
-    # - { role: qutebrowser, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }
     # - { role: ripgrep, become: true }
