@@ -97,7 +97,6 @@
     # - { role: inkscape, become: true }
     # - { role: jackeq, become: true }
     # - { role: jkmeter, become: true }
-    # - { role: ksuperkey, become: true }
     # - { role: kiki, become: true }
     # - { role: lyx, become: true }
     # - { role: maim, become: true }
@@ -132,7 +131,6 @@
     # - { role: system-monitor-extension }
     # - { role: synaptic, become: true }
     # - { role: sublime3, become: true }
-    # - { role: sunflower, become: true }
     # - { role: telnet, become: true }
     # - { role: thunderbird, become: true }
     # - { role: transmission, become: true }
