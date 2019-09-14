@@ -46,7 +46,6 @@
     - { role: ssh, become: true }
     # Desktop roles
     # - { role: audacious, become: true }
-    # - { role: audacity, become: true }
     # - { role: desktop, become: true }
     # - { role: desktop-cleanup, become: true }
     # - { role: desktop-autostart }
@@ -78,7 +77,6 @@
     # - { role: font-viewer, become: true }
     # - { role: ffmpeg, become: true }
     # - { role: filezilla, become: true }
-    # - { role: firefox, become: true }
     # - { role: flatabulous, become: true }
     # - { role: gdrive, become: true }
     # - { role: geary, become: true }
@@ -87,7 +85,6 @@
     # - { role: gnome-shell-extensions }
     # - { role: gnome-system-tools, become: true }
     # - { role: gnome-tweak, become: true }
-    # - { role: gimp, become: true }
     # - { role: git }
     # - { role: gsview, become: true }
     # - { role: grub-customizer, become: true }
@@ -135,7 +132,6 @@
     # - { role: thunderbird, become: true }
     # - { role: transmission, become: true }
     # - { role: unetbootin, become: true }
-    # - { role: ultra-flat-icons, become: true }
     # - { role: urxvt-perls }
     - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
