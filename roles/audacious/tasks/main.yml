@@ -1,4 +1,0 @@
----
-
-- name: Install Audacious
-  apt: name=audacious state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
