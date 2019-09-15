@@ -44,20 +44,9 @@
     # - { role: rbenv, become: true }
     - { role: ssh, become: true }
     # Desktop roles
-    # - { role: audacious, become: true }
-    # - { role: desktop, become: true }
-    # - { role: desktop-cleanup, become: true }
-    # - { role: desktop-autostart }
-    # - { role: desktop-preferences-unity }
-    # - { role: adapta-theme, become: true }
-    # - { role: albert, become: true }
-    # - { role: altyo, become: true }
-    # - { role: arc-theme, become: true }
     # - { role: atom, become: true }
-    # - { role: bless, become: true }
     # - { role: bleachbit, become: true }
     # - { role: brasero, become: true }
-    # - { role: brave-browser, become: true }
     # - { role: caffeine , become: true }
     # - { role: classicmenu-indicator , become: true }
     # - { role: clipit , become: true }
@@ -137,7 +126,6 @@
     # - { role: workrave, become: true }
     - { role: wget, become: true }
     # - { role: workday }
-    # - { role: xfce-dockbarx, become: true }
     # - { role: xmind, become: true }
     # - { role: xchat, become: true }
     # - { role: youtube-dl, become: true }
