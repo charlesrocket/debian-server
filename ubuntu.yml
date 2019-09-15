@@ -55,7 +55,6 @@
     # - { role: arc-theme, become: true }
     # - { role: atom, become: true }
     # - { role: bless, become: true }
-    # - { role: blender, become: true }
     # - { role: bleachbit, become: true }
     # - { role: brasero, become: true }
     # - { role: brave-browser, become: true }
