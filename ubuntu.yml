@@ -27,7 +27,6 @@
     - { role: fail2ban, become: true }
     # - { role: gvm, become: true }
     # - { role: hhvm, become: true }
-    # - { role: mailcatcher, become: true }
     # - { role: memcached, become: true }
     # - { role: mysql57, become: true }
     # - { role: mysql56, become: true }

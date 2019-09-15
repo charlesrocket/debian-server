@@ -1,4 +1,0 @@
----
-
-- name: Restart Mailcatcher
-  service: name=mailcatcher state=restarted
