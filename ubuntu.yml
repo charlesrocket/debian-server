@@ -22,7 +22,6 @@
     # - { role: composer, become: true }
     - { role: docker, become: true }
     - { role: exfat-support, become: true }
-    # - { role: faenza }
     # - { role: elasticsearch, become: true }
     # - { role: exim, become: true }
     - { role: fail2ban, become: true }
@@ -45,7 +44,6 @@
     - { role: ssh, become: true }
     # Desktop roles
     # - { role: atom, become: true }
-    # - { role: bleachbit, become: true }
     # - { role: brasero, become: true }
     # - { role: caffeine , become: true }
     # - { role: classicmenu-indicator , become: true }
@@ -68,9 +66,6 @@
     # - { role: geary, become: true }
     # - { role: gconf-editor, become: true }
     # - { role: gparted, become: true }
-    # - { role: gnome-shell-extensions }
-    # - { role: gnome-system-tools, become: true }
-    # - { role: gnome-tweak, become: true }
     # - { role: git }
     # - { role: gsview, become: true }
     # - { role: grub-customizer, become: true }
@@ -128,13 +123,7 @@
     # - { role: workday }
     # - { role: xmind, become: true }
     # - { role: xchat, become: true }
-    # - { role: youtube-dl, become: true }
     - { role: 7zip, become: true }
-    # bspwm
-    # - { role: sxhkd, become: true }
-    # - { role: bspwm, become: true }
-    # - { role: bspwm-panel, become: true }
-    # - { role: bspwm-environment, become: true }
     # User roles
     # - { role: gulp}
     # - { role: browsersync }

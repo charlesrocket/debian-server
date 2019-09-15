@@ -1,5 +1,0 @@
----
-
-  # Provides a GUI for managing users and groups.
-- name: Install Gnome System Tools
-  apt: pkg="gnome-system-tools" state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
