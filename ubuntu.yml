@@ -59,7 +59,6 @@
     # - { role: brasero, become: true }
     # - { role: brave-browser, become: true }
     # - { role: caffeine , become: true }
-    # - { role: cheese, become: true }
     # - { role: classicmenu-indicator , become: true }
     # - { role: clipit , become: true }
     # - { role: cpufrequency-indicator , become: true }
