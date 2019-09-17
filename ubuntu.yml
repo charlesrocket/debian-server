@@ -88,8 +88,6 @@
     - { role: netcat, become: true }
     # - { role: notepadqq, become: true }
     # - { role: notify-osd, become: true }
-    # - { role: pavumeter, become: true }
-    # - { role: psensor , become: true }
     # - { role: qjackctl, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }
