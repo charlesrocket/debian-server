@@ -86,8 +86,6 @@
     # - { role: nemo, become: true }
     # - { role: nvidia, become: true }
     - { role: netcat, become: true }
-    # - { role: notepadqq, become: true }
-    # - { role: notify-osd, become: true }
     # - { role: qjackctl, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }
