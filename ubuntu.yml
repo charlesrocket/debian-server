@@ -78,7 +78,6 @@
     # - { role: lyx, become: true }
     # - { role: maim, become: true }
     # - { role: min, become: true }
-    # - { role: marblemouse, become: true }
     # - { role: meld, become: true }
     # - { role: mysql-workbench, become: true }
     # - { role: nautilus-plugins, become: true }
