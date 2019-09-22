@@ -71,7 +71,6 @@
     - { role: htop, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }
-    # - { role: inkscape, become: true }
     # - { role: jackeq, become: true }
     # - { role: jkmeter, become: true }
     # - { role: kiki, become: true }
@@ -96,20 +95,16 @@
     # - { role: smartgit, become: true }
     # - { role: simple-screen-recorder, become: true }
     # - { role: screenruler, become: true }
-    # - { role: smplayer, become: true }
     # - { role: spe, become: true }
     # - { role: startup }
     # - { role: system-monitor-extension }
-    # - { role: synaptic, become: true }
     # - { role: sublime3, become: true }
     # - { role: telnet, become: true }
-    # - { role: thunderbird, become: true }
     # - { role: transmission, become: true }
     # - { role: unetbootin, become: true }
     # - { role: urxvt-perls }
     - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
-    # - { role: vokoscreen, become: true }
     # - { role: wine, become: true }
     # - { role: workrave, become: true }
     - { role: wget, become: true }
