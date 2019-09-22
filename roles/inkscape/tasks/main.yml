@@ -1,4 +1,0 @@
----
-
-- name: Install Inkscape
-  apt: pkg=inkscape state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
