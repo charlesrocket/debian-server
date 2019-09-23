@@ -71,7 +71,6 @@
     - { role: htop, become: true }
     # - { role: hubic, become: true }
     # - { role: indicator-sysmonitor, become: true }
-    # - { role: jackeq, become: true }
     # - { role: jkmeter, become: true }
     # - { role: kiki, become: true }
     # - { role: lyx, become: true }
@@ -83,7 +82,6 @@
     # - { role: nemo, become: true }
     # - { role: nvidia, become: true }
     - { role: netcat, become: true }
-    # - { role: qjackctl, become: true }
     # - { role: remarkable, become: true }
     # - { role: remmina, become: true }
     # - { role: ripgrep, become: true }
@@ -93,8 +91,6 @@
     # - { role: sift, become: true }
     # - { role: slop, become: true }
     # - { role: smartgit, become: true }
-    # - { role: simple-screen-recorder, become: true }
-    # - { role: screenruler, become: true }
     # - { role: spe, become: true }
     # - { role: startup }
     # - { role: system-monitor-extension }
@@ -106,9 +102,7 @@
     - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
     # - { role: wine, become: true }
-    # - { role: workrave, become: true }
     - { role: wget, become: true }
-    # - { role: workday }
     # - { role: xmind, become: true }
     # - { role: xchat, become: true }
     - { role: 7zip, become: true }
