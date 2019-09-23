@@ -41,70 +41,16 @@
     # - { role: redis, become: true }
     # - { role: rbenv, become: true }
     - { role: ssh, become: true }
-    # Desktop roles
-    # - { role: atom, become: true }
-    # - { role: brasero, become: true }
-    # - { role: caffeine , become: true }
-    # - { role: classicmenu-indicator , become: true }
-    # - { role: clipit , become: true }
-    # - { role: cpufrequency-indicator , become: true }
     # - { role: curl, become: true }
-    # - { role: claws-mail, become: true }
-    # - { role: compton, become: true }
-    # - { role: copyq, become: true }
-    # - { role: dbeaver, become: true }
-    # - { role: dconf-editor, become: true }
-    # - { role: double-commander, become: true }
-    # - { role: diffpdf, become: true }
-    # - { role: dvdisaster, become: true }
-    # - { role: font-viewer, become: true }
-    # - { role: ffmpeg, become: true }
-    # - { role: filezilla, become: true }
-    # - { role: flatabulous, become: true }
-    # - { role: gdrive, become: true }
-    # - { role: geary, become: true }
-    # - { role: gconf-editor, become: true }
-    # - { role: gparted, become: true }
     # - { role: git }
-    # - { role: gsview, become: true }
-    # - { role: grub-customizer, become: true }
     - { role: htop, become: true }
-    # - { role: hubic, become: true }
-    # - { role: indicator-sysmonitor, become: true }
-    # - { role: jkmeter, become: true }
-    # - { role: kiki, become: true }
-    # - { role: lyx, become: true }
-    # - { role: maim, become: true }
-    # - { role: min, become: true }
-    # - { role: meld, become: true }
-    # - { role: mysql-workbench, become: true }
-    # - { role: nautilus-plugins, become: true }
-    # - { role: nemo, become: true }
-    # - { role: nvidia, become: true }
     - { role: netcat, become: true }
-    # - { role: remarkable, become: true }
-    # - { role: remmina, become: true }
-    # - { role: ripgrep, become: true }
-    # - { role: rofi, become: true }
     # - { role: samba, become: true }
-    # - { role: shutter, become: true }
-    # - { role: sift, become: true }
-    # - { role: slop, become: true }
-    # - { role: smartgit, become: true }
-    # - { role: spe, become: true }
     # - { role: startup }
-    # - { role: system-monitor-extension }
-    # - { role: sublime3, become: true }
     # - { role: telnet, become: true }
-    # - { role: transmission, become: true }
-    # - { role: unetbootin, become: true }
-    # - { role: urxvt-perls }
     - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
-    # - { role: wine, become: true }
     - { role: wget, become: true }
-    # - { role: xmind, become: true }
-    # - { role: xchat, become: true }
     - { role: 7zip, become: true }
     # User roles
     # - { role: gulp}
