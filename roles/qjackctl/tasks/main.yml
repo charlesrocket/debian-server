@@ -1,4 +1,0 @@
----
-
-- name: Install QjackCtl
-  apt: pkg=qjackctl state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

@@ -1,4 +1,0 @@
----
-
-- name: Install Screen Ruler
-  apt: pkg=screenruler state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
