@@ -1,4 +1,0 @@
----
-
-- name: Install ClassicMenu Indicator
-  apt: pkg=classicmenu-indicator state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

@@ -1,4 +1,0 @@
----
-
-- name: Install Font Viewer
-  apt: pkg=gnome-font-viewer state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

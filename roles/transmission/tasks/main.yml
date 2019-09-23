@@ -1,4 +1,0 @@
----
-
-- name: Install Transmission
-  apt: pkg=transmission state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

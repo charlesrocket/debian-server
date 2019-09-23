@@ -1,4 +1,0 @@
----
-
-- name: Install CPU Frequency Indicator
-  apt: pkg=cpufrequtils state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
