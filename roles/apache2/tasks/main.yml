@@ -26,7 +26,7 @@
 
 - name: Configure Apache2 user and group
   lineinfile: dest=/etc/apache2/envvars regexp="^export {{ item.param }}=" line="export {{ item.param }}={{ item.value }}"
-  with_items :
+  with_items:
     - { param: APACHE_RUN_USER, value: "{{ apache2.run_as }}" }
     - { param: APACHE_RUN_GROUP, value: "{{ apache2.run_as }}" }
 

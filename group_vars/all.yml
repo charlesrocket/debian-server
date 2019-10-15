@@ -6,7 +6,7 @@ locale: "en_US.UTF-8"
 timezone: "America/Los_Angeles"
 desktop_autostart:
   add:
-    - { name: Tilda , exec: /usr/bin/tilda }
+    - { name: Tilda, exec: /usr/bin/tilda }
   remove:
     - deja-dup-monitor.desktop
     - onboard-autostart.desktop
