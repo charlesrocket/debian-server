@@ -2,6 +2,8 @@
 
 # disco-playbook
 
+[![Build Status](https://travis-ci.com/charlesrocket/disco-playbook.svg?branch=master)](https://travis-ci.com/charlesrocket/disco-playbook)
+
 Ansible playbook for **Ubuntu 19.04** server
 
 ### Start
