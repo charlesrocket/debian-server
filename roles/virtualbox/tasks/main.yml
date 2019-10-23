@@ -1,5 +1,9 @@
 ---
 
+- name: VirtualBox Extension Pack license
+  shell: echo virtualbox-ext-pack virtualbox-ext-pack/license select true | debconf-set-selections
+  become: yes
+
 - name: Install VirtualBox
   apt: pkg=virtualbox state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
 
