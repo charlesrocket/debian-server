@@ -10,7 +10,7 @@ cat << "EOF"
  ░ ▒  ▒  ▒ ░░ ░▒  ░ ░  ░  ▒     ░ ▒ ▒░
  ░ ░  ░  ▒ ░░  ░  ░  ░        ░ ░ ░ ▒
    ░     ░        ░  ░ ░          ░ ░
- ░                   ░                 
+ ░                   ░
 
 EOF
 echo "Installing Ansible..."
