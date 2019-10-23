@@ -15,7 +15,7 @@ cat << "EOF"
 EOF
 echo "Installing Ansible..."
 sudo apt update
-sudo apt install python ansible -y
+sudo apt install python python3-distutils ansible -y
 echo ""
 echo "Done"
 echo ""
