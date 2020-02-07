@@ -15,7 +15,7 @@
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
   loop: ['aptitude', 'build-essential', 'bzip2', 'chkrootkit', 'clamav', 'curl', 'diffutils', 'dos2unix',
 'fdupes', 'figlet', 'ftp-ssl', 'gawk', 'gcc', 'git', 'grep', 'gzip', 'htop', 'httping', 'iftop', 'iotop', 'less', 'lolcat', 'lynis', 'make', 'mc', 'nano', 'nfs-common',
-'nmap', 'openssl', 'openssh-server', 'p7zip', 'pv', 'pwgen', 'ranger', 'rar', 'rkhunter', 'smbclient', 'software-properties-common', 'sshfs', 'sshpass', 'tar', 'tmux',
+'nmap', 'openssl', 'openssh-server', 'p7zip', 'pv', 'pwgen', 'ranger', 'rar', 'rkhunter', 'screenfetch', 'smbclient', 'software-properties-common', 'sshfs', 'sshpass', 'tar', 'tmux',
 'tig', 'unzip', 'vim', 'wget', 'whois', 'zfsutils-linux', 'zip']
 
 - name: Upgrade installed packages
