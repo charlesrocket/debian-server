@@ -10,7 +10,7 @@ Ansible playbook for **Ubuntu 18.04** server
 
 ```
 git clone https://https://github.com/charlesrocket/ubuntu-playbook
-cd disco-playbook
+cd ubuntu-playbook
 ./install.sh
 ```
 
