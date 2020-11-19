@@ -19,4 +19,4 @@ sudo apt install python python3-distutils ansible -y
 echo ""
 echo "Done"
 echo ""
-echo "Enter 'ansible-playbook ubuntu.yml --ask-become-pass' to start"
+echo "Enter 'ansible-playbook debian.yml --ask-become-pass' to start"

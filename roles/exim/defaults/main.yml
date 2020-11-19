@@ -1,7 +1,0 @@
----
-
-exim:
-  start: false
-  service_enabled: no
-  dc_eximconfig_configtype: internet
-  dc_localdelivery: mail_spool
