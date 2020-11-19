@@ -1,6 +1,6 @@
 ---
 sudo: required
-dist: bionic
+dist: buster
 
 language: python
 python:
@@ -13,10 +13,10 @@ jobs:
   include:
     - stage: syntax check
       script:
-        - ansible-playbook ubuntu.yml --syntax-check
+        - ansible-playbook debian.yml --syntax-check
 #   - stage: dry run
 #     script:
-#       - ansible-playbook ubuntu.yml --check
+#       - ansible-playbook debian.yml --check
 
 before_install:
   - sudo apt-get update -qq

@@ -1,16 +1,16 @@
 <img src="screenshot.jpg" alt="screenshot">
 
-# ubuntu-playbook
+# debian-server
 
-[![Build Status](https://travis-ci.com/charlesrocket/ubuntu-playbook.svg?branch=master)](https://travis-ci.com/charlesrocket/ubuntu-playbook)
+[![Build Status](https://travis-ci.com/charlesrocket/debian-server.svg?branch=master)](https://travis-ci.com/charlesrocket/debian-server)
 
-Ansible playbook for **Ubuntu 18.04** server
+Ansible playbook for **Debian** server
 
 ### Start
 
 ```
-git clone https://https://github.com/charlesrocket/ubuntu-playbook
-cd ubuntu-playbook
+git clone https://https://github.com/charlesrocket/debian-server
+cd debian-server
 ./install.sh
 ```
 

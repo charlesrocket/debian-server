@@ -1,4 +1,0 @@
----
-
-- name: Install telnet
-  apt: pkg=telnet state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
