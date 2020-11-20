@@ -1,11 +1,27 @@
 ---
 
+- name: Add pgp key
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    state: present
+    
+- name: Add repo
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ ansible_lsb['codename'] }} contrib"
+    filename: virtualbox
+    state: present
+    update_cache: yes
+    
 - name: VirtualBox Extension Pack license
   shell: echo virtualbox-ext-pack virtualbox-ext-pack/license select true | debconf-set-selections
   become: yes
 
 - name: Install VirtualBox
-  apt: pkg=virtualbox state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  apt:
+    name: "virtualbox-{{ virtualbox_version }}"
+    state: present
+    force_apt_get: yes
+    update_cache: yes
 
 - name: Install VirtualBox Extension Pack
   apt: pkg=virtualbox-ext-pack state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
