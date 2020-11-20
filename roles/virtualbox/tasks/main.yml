@@ -6,26 +6,39 @@
     state: present
     
 - name: Add repo
+  become: true
   apt_repository:
-    repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ ansible_lsb['codename'] }} contrib"
+    repo: 'deb {{ virtualbox_repository }}/debian {{ ansible_distribution_release }} contrib'
+    state: present
     filename: virtualbox
-    state: present
-    update_cache: yes
+    update_cache: true
+  register: result
+  until: result is succeeded
     
-- name: VirtualBox Extension Pack license
-  shell: echo virtualbox-ext-pack virtualbox-ext-pack/license select true | debconf-set-selections
-  become: yes
-
-- name: Install VirtualBox
-  apt:
-    name: "virtualbox-{{ virtualbox_version }}"
-    state: present
-    force_apt_get: yes
-    update_cache: yes
+- name: Search current Virtualbox version
+  uri:
+    url: https://release-monitoring.org/api/project/14449
+    return_content: true
+  register: register_version
+  delegate_to: localhost
+  
+- name: Set current Virtualbox version
+  set_fact:
+    current_version: "{{ register_version.json['version'] }}"
     
-- name: Install VirtualBox Extension Pack
-  apt:
-    name: virtualbox-ext-pack
+- name: Install Virtualbox
+  become: true
+  package:
+    name: '{{ virtualbox_packages }}'
     state: present
-    force_apt_get: yes
-    update_cache: yes
+  register: result
+  until: result is successful
+  
+- name: Download Extension pack
+  get_url:
+    url: 'https://download.virtualbox.org/virtualbox/{{ current_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ current_version }}.vbox-extpack'
+    dest: '{{ virtualbox_extension_pack_dest }}'
+    
+- name: Install Extension pack
+  become: true
+  shell: 'VBoxManage extpack install --replace --accept-license={{ virtualbox_extension_pack_license_hash }} {{ virtualbox_extension_pack_dest }}'

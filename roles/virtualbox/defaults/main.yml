@@ -1,5 +1,9 @@
 
 ---
-# defaults file for virtualbox
-
-virtualbox_version: 6.1
+virtualbox_version: '{{ current_version }}'
+virtualbox_repository: 'https://download.virtualbox.org/virtualbox'
+virtualbox_packages: "virtualbox-{{ virtualbox_version.split('.')[0] + '.' + virtualbox_version.split('.')[1] }}"
+virtualbox_extension_pack_version: '{{ current_version }}'
+virtualbox_extension_pack_url: 'https://download.virtualbox.org/virtualbox/{{ current_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ current_version }}.vbox-extpack'
+virtualbox_extension_pack_dest: '/tmp/Oracle_VM_VirtualBox_Extension_Pack-{{ current_version }}.vbox-extpack'
+virtualbox_extension_pack_license_hash: '33d7284dc4a0ece381196fda3cfe2ed0e1e8e7ed7f27b9a9ebc4ee22e24bd23c'
