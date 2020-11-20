@@ -16,7 +16,7 @@
   loop: ['aptitude', 'build-essential', 'bzip2', 'chkrootkit', 'clamav', 'curl', 'diffutils', 'dos2unix',
 'fdupes', 'figlet', 'gawk', 'gcc', 'git', 'grep', 'gzip', 'htop', 'httping', 'iftop', 'iotop', 'less', 'lolcat', 'lynis', 'make', 'mc', 'nano', 'neofetch', 'nfs-common',
 'nmap', 'openssl', 'openssh-server', 'p7zip', 'pv', 'pwgen', 'ranger', 'rar', 'rkhunter', 'smbclient', 'software-properties-common', 'sshfs', 'sshpass', 'tar', 'tmux',
-'tig', 'unzip', 'vim', 'wget', 'whois', 'zfsutils-linux', 'zip']
+'tig', 'unzip', 'vim', 'wget', 'whois', 'zip']
 
 - name: Upgrade installed packages
   apt: upgrade=yes
