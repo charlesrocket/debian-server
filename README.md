@@ -1,5 +1,3 @@
-<img src="screenshot.jpg" alt="screenshot">
-
 # debian-server
 
 [![Build Status](https://travis-ci.com/charlesrocket/debian-server.svg?branch=master)](https://travis-ci.com/charlesrocket/debian-server)
