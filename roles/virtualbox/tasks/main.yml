@@ -22,6 +22,10 @@
     state: present
     force_apt_get: yes
     update_cache: yes
-
+    
 - name: Install VirtualBox Extension Pack
-  apt: pkg=virtualbox-ext-pack state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+  apt:
+    name: virtualbox-ext-pack
+    state: present
+    force_apt_get: yes
+    update_cache: yes
