@@ -40,6 +40,15 @@
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
+    
+- name: Tune GPG
+  lineinfile:
+    dest: /home/{{ ansible_user_id }}/.bashrc
+    line: "{{ item }}"
+    owner: "{{ ansible_user_id }}"
+  with_items:
+    - "GPG_TTY=$(tty)"
+    - "export GPG_TTY"
 
 - name:  Check for "admin" group
   group:
