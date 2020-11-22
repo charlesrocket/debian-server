@@ -1,4 +1,4 @@
-<img src="screenshot.png" height="900" alt="screenshot">
+![screenshot](screenshot.png)
 
 # debian-server
 
