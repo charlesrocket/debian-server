@@ -3,6 +3,7 @@
 - name: Debian playbook
   hosts: localhost
   roles:
+    - { role: apt-repo-meta, become: true }
     - { role: apt-meta, become: true }
     - { role: common, become: true }
     - { role: docker, become: true }
