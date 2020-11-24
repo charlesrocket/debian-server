@@ -8,10 +8,9 @@ Ansible playbook for **Debian** server
 
 ### Start
 
-```
-git clone https://https://github.com/charlesrocket/debian-server
-cd debian-server
-./install.sh
+```bash
+#from /home/$USER
+curl https://raw.githubusercontent.com/charlesrocket/debian-playbook/main/bootstrap | bash
 ```
 
 _Edit `group_vars/all.yml` before starting the playbook!_
