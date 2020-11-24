@@ -8,16 +8,6 @@
   apt: pkg=apt-transport-https state=installed
   when: not apt_https_transport.stat.exists
 
-- name: Ensure that Aptitude repositories are up to date
-  apt: update_cache=yes cache_valid_time={{ aptcachetime }}
-
-- name: Install common packages
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  loop: ['aptitude', 'build-essential', 'bzip2', 'chkrootkit', 'clamav', 'curl', 'diffutils', 'direnv', 'dos2unix',
-'fdupes', 'figlet', 'gawk', 'gcc', 'git', 'grep', 'gzip', 'htop', 'httping', 'iftop', 'iotop', 'less', 'lolcat', 'lynis', 'make', 'mc', 'nano', 'nfs-common',
-'nmap', 'openssl', 'openssh-server', 'p7zip', 'pv', 'pwgen', 'ranger', 'rar', 'rkhunter', 'smbclient', 'software-properties-common', 'sshfs', 'sshpass', 'tar', 'tmux',
-'tig', 'ufw', 'unzip', 'vim', 'wget', 'whois', 'zip']
-
 - name: Upgrade installed packages
   apt: upgrade=yes
 

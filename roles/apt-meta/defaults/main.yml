@@ -1,0 +1,49 @@
+---
+
+apt_state: latest
+
+apt_packages:
+  - aptitude
+  - build-essential
+  - bzip2
+  - chkrootkit
+  - clamav
+  - curl
+  - diffutils
+  - direnv
+  - dos2unix
+  - fdupes
+  - figlet
+  - gawk
+  - gcc
+  - git
+  - grep
+  - gzip
+  - htop
+  - httping
+  - iftop
+  - iotop
+  - less
+  - lolcat
+  - lynis
+  - make
+  - mc
+  - nfs-common
+  - nmap
+  - openssl
+  - p7zip
+  - pv
+  - pwgen
+  - rkhunter
+  - smbclient
+  - software-properties-common
+  - sshfs
+  - sshpass
+  - tmux
+  - tig
+  - ufw
+  - unzip
+  - vim
+  - wget
+  - whois
+  - zip
