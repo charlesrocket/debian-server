@@ -69,8 +69,3 @@
     port: 22
     proto: tcp
   become: True
-
-- name: Enable UFW
-  ufw:
-    state: enabled
-  become: True
