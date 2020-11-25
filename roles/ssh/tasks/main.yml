@@ -10,7 +10,7 @@
   service: name=ssh state={{ ssh.start | ternary('restarted','stopped') }} enabled={{ ssh.service_enabled }}
 
 - name: Secure port 22
-  community.general.ufw:
+  ufw:
     rule: limit
     port: 22
     proto: tcp
