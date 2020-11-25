@@ -1,0 +1,15 @@
+---
+
+- name: Ensure apt packages are installed
+  apt:
+    state: "{{ apt_state }}"
+    name: "{{ packages }}"
+    autoclean: True
+    autoremove: True
+    force_apt_get: True
+    update_cache: True
+    cache_valid_time: 3600
+    install_recommends: False
+  vars:
+    packages: "{{ apt_packages }}"
+  become: True

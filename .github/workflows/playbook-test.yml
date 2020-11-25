@@ -1,0 +1,27 @@
+name: Playbook Testing
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Prepare docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare workdir
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Build docker image
+        run: max=100; i=0; while [ $i -lt $max ]; do if docker build -t debian-server .; then break; else i=$((i+1)); fi done
+      
+  test:
+    name: Test playbook
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout into prepared workspace
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Execute tests
+        run: make test-docker-full

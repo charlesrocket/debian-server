@@ -1,4 +1,0 @@
----
-
-- name: Install 7zip
-  apt: pkg=p7zip-full state=latest update_cache=yes cache_valid_time={{ aptcachetime }}

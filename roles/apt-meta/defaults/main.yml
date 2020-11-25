@@ -1,0 +1,53 @@
+---
+
+apt_state: latest
+
+apt_packages:
+  - aptitude
+  - build-essential
+  - bzip2
+  - chkrootkit
+  - clamav
+  - curl
+  - diffutils
+  - direnv
+  - dos2unix
+  - exfat-fuse
+  - exfat-utils
+  - fdupes
+  - figlet
+  - gawk
+  - gcc
+  - git
+  - grep
+  - gzip
+  - htop
+  - httping
+  - iftop
+  - iotop
+  - less
+  - lolcat
+  - lynis
+  - make
+  - mc
+  - netcat
+  - nfs-common
+  - nmap
+  - openssh-server
+  - openssl
+  - p7zip
+  - pv
+  - pwgen
+  - rkhunter
+  - smbclient
+  - software-properties-common
+  - sshfs
+  - sshpass
+  - tmux
+  - tig
+  - ufw
+  - unzip
+  - vim
+  - wget
+  - whois
+  - zip

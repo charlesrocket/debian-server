@@ -15,10 +15,20 @@
     state: present
 
 - name: Update apt and install docker-ce
-  apt: update_cache=yes name=docker-ce state=latest
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: True
 
 - name: Create Docker group
-  group: name=docker state=present
+  group:
+    name: docker
+    state: present
+  become: True
 
 - name: Add current user to Docker group
-  user: name="{{ ansible_env.USER }}" groups=docker append=yes
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+  become: True
