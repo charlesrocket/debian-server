@@ -30,7 +30,7 @@
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
-    
+
 - name: Tune GPG
   lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
@@ -50,12 +50,6 @@
     name: "{{ ansible_user_id }}"
     groups: admin
     append: yes
-
-- name: Su for admin group
-  shell: "dpkg-statoverride --update --add root admin 4750 /bin/su"
-  register: command_result
-  failed_when: "'FAILED' in command_result.stderr"
-  become: True
 
 - name: Restrict shared memory
   lineinfile:

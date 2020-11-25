@@ -4,11 +4,6 @@
   apt: name={{ item }} state=present update_cache=yes
   loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'gnupg2']
 
-- name: Add Docker GPG apt Key
-  shell: curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-  args:
-    warn: false
-
 - name: Add Docker Repository
   apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable

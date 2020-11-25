@@ -13,8 +13,6 @@ apt_repo_repositories:
     repo: deb http://security.debian.org {{ debian_dist }}/updates main
 
 # Array of apt keys to add (all are optional)
-apt_repo_keys: []
-# - url:
-#   keyserver:
-#   id:
-#   file:
+apt_repo_keys:
+  - url: https://download.docker.com/linux/debian/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
