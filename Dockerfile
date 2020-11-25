@@ -94,7 +94,6 @@ RUN set -eux \
 			echo "	# Validate"; \
 			echo "	diff install1.txt install2.txt"; \
 			echo; \
-		echo "fi"; \
 		\
 	) > run-tests.sh \
 	&& chmod +x run-tests.sh
