@@ -1,4 +1,4 @@
-name: Playbook Testing
+name: Playbook tests
 
 on: [push, pull_request]
 
