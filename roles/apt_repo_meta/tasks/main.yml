@@ -2,7 +2,7 @@
 
 - name: Ensure required packages are installed
   apt:
-    state: latest
+    state: present
     name: "{{ apt_repo_packages }}"
     update_cache: True
     install_recommends: False

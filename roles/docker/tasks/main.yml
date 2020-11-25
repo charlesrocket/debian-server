@@ -1,7 +1,7 @@
 ---
 
 - name: Install required system packages
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=present update_cache=yes
   loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'gnupg2']
 
 - name: Add Docker GPG apt Key
@@ -11,13 +11,13 @@
 
 - name: Add Docker Repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ansible_distribution_release}} stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
     state: present
 
 - name: Update apt and install docker-ce
   apt:
     name: docker-ce
-    state: latest
+    state: present
     update_cache: True
 
 - name: Create Docker group

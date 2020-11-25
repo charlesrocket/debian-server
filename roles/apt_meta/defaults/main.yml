@@ -1,6 +1,6 @@
 ---
 
-apt_state: latest
+apt_state: present
 
 apt_packages:
   - aptitude
