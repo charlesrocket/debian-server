@@ -12,6 +12,8 @@ apt_packages:
   - diffutils
   - direnv
   - dos2unix
+  - exfat-fuse
+  - exfat-utils
   - fdupes
   - figlet
   - gawk
@@ -28,6 +30,7 @@ apt_packages:
   - lynis
   - make
   - mc
+  - netcat
   - nfs-common
   - nmap
   - openssh-server
