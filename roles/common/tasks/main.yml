@@ -68,12 +68,6 @@
     port: ssh
     proto: tcp
 
-- name: Limit ssh
-  ufw:
-    rule: limit
-    port: ssh
-    proto: tcp
-
 - name: Enable UFW
   ufw:
     state: enabled
