@@ -65,7 +65,7 @@
 - name: Allow ssh
   ufw:
     rule: allow
-    port: ssh
+    port: 22
     proto: tcp
 
 - name: Enable UFW
