@@ -2,7 +2,7 @@
 
 # debian-server
 
-[![Build Status](https://travis-ci.com/charlesrocket/debian-server.svg?branch=master)](https://travis-ci.com/charlesrocket/debian-server)
+[![Actions Status](https://github.com/charlesrocket/debian-server/workflows/Playbook%20tests/badge.svg)](https://github.com/charlesrocket/debian-server/actions)
 
 Ansible playbook for **Debian** server
 
