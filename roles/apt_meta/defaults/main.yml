@@ -50,7 +50,7 @@ apt_packages:
   - ufw
   - unzip
   - vim
-  - virtualbox
+  - virtualbox-6.1
   - virtualbox-ext-pack
   - wget
   - whois
