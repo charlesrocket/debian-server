@@ -1,11 +1,13 @@
 ---
 
-apt_state: latest
+apt_state: present
 
 apt_packages:
   - aptitude
+  - apt-transport-https
   - build-essential
   - bzip2
+  - ca-certificates
   - chkrootkit
   - clamav
   - curl
@@ -48,6 +50,7 @@ apt_packages:
   - ufw
   - unzip
   - vim
+  - virtualbox-6.1
   - wget
   - whois
   - zip
