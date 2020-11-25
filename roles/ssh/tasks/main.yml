@@ -12,6 +12,6 @@
 - name: Secure port 22
   community.general.ufw:
     rule: limit
-    port: ssh
+    port: 22
     proto: tcp
   become: True
