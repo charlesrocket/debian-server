@@ -30,6 +30,7 @@ apt_packages:
   - mc
   - nfs-common
   - nmap
+  - openssh-server
   - openssl
   - p7zip
   - pv
