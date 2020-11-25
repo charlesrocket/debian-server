@@ -9,4 +9,3 @@
     - { role: docker, become: true }
     - { role: ssh, become: true }
     - { role: vagrant, become: true }
-    - { role: virtualbox, become: true }

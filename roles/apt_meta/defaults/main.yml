@@ -48,6 +48,8 @@ apt_packages:
   - ufw
   - unzip
   - vim
+  - virtualbox
+  - virtualbox-ext-pack
   - wget
   - whois
   - zip
