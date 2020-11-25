@@ -4,7 +4,7 @@ IMAGE = charlesrocket/debian-server
 TAG = latest
 
 # Ansible variables
-VERBOSE=
+VERBOSE=vv
 ARG=
 
 .PHONY: help build-docker test-docker-full test-docker-single itest-docker-full itest-docker-single
