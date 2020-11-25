@@ -53,21 +53,24 @@
 
 - name: Su for admin group
   shell: "dpkg-statoverride --update --add root admin 4750 /bin/su"
-  become: true
   register: command_result
   failed_when: "'FAILED' in command_result.stderr"
+  become: True
 
 - name: Restrict shared memory
   lineinfile:
     dest: /etc/fstab
     line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
+  become: True
 
 - name: Allow ssh
   ufw:
     rule: allow
     port: 22
     proto: tcp
+  become: True
 
 - name: Enable UFW
   ufw:
     state: enabled
+  become: True
