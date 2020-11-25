@@ -65,7 +65,8 @@
 - name: Allow ssh
   ufw:
     rule: allow
-    name: OpenSSH
+    port: ssh
+    proto: tcp
 
 - name: Limit ssh
   ufw:
