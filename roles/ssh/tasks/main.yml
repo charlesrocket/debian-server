@@ -1,8 +1,5 @@
 ---
 
-- name: Install SSH Server
-  apt: pkg=openssh-server state=latest cache_valid_time={{ aptcachetime }}
-
 - name: "{{ ssh.password_auth | ternary('Allow','Disallow') }} password authentication"
   lineinfile: dest=/etc/ssh/sshd_config regexp="^#PasswordAuthentication" line="PasswordAuthentication {{ ssh.password_auth | ternary('yes','no') }}" state=present
 
