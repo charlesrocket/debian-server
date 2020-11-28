@@ -10,7 +10,7 @@ Ansible playbook for **Debian** server
 
 ```bash
 #from /home/$USER
-curl https://raw.githubusercontent.com/charlesrocket/debian-playbook/main/bootstrap | bash
+curl https://raw.githubusercontent.com/charlesrocket/debian-server/main/bootstrap | bash
 ```
 
 _Edit `group_vars/all.yml` before starting the playbook!_
