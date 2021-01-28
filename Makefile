@@ -4,7 +4,7 @@ IMAGE = charlesrocket/debian-server
 TAG = latest
 
 # Ansible variables
-VERBOSE=vv
+VERBOSE=vvv
 ARG=
 
 .PHONY: help build-docker test-docker-full test-docker-single itest-docker-full itest-docker-single
@@ -119,15 +119,15 @@ ifeq ($(USER),root)
 endif
 ifndef ROLE
 ifndef IGNORE
-	ansible-playbook debian.yml --limit --diff --ask-become-pass $(ARG)
+	ansible-playbook debian.yml --diff --ask-become-pass $(ARG)
 else
-	ansible-playbook debian.yml --limit --diff --ask-become-pass $(ARG) --skip-tags=$(IGNORE)
+	ansible-playbook debian.yml --diff --ask-become-pass $(ARG) --skip-tags=$(IGNORE)
 endif
 else
 ifndef IGNORE
-	ansible-playbook debian.yml --limit --diff --ask-become-pass $(ARG) -t $(ROLE)
+	ansible-playbook debian.yml --diff --ask-become-pass $(ARG) -t $(ROLE)
 else
-	ansible-playbook debian.yml --limit --diff --ask-become-pass $(ARG) -t $(ROLE) --skip-tags=$(IGNORE)
+	ansible-playbook debian.yml --diff --ask-become-pass $(ARG) -t $(ROLE) --skip-tags=$(IGNORE)
 endif
 endif
 
@@ -138,14 +138,14 @@ ifeq ($(USER),root)
 endif
 ifndef ROLE
 ifndef IGNORE
-	ansible-playbook debian.yml --limit --diff --check --ask-become-pass $(ARG)
+	ansible-playbook debian.yml --diff --check --ask-become-pass $(ARG)
 else
-	ansible-playbook debian.yml --limit --diff --check --ask-become-pass $(ARG) --skip-tags=$(IGNORE)
+	ansible-playbook debian.yml --diff --check --ask-become-pass $(ARG) --skip-tags=$(IGNORE)
 endif
 else
 ifndef IGNORE
-	ansible-playbook debian.yml --limit --diff --check --ask-become-pass $(ARG) -t $(ROLE)
+	ansible-playbook debian.yml --diff --check --ask-become-pass $(ARG) -t $(ROLE)
 else
-	ansible-playbook debian.yml --limit --diff --check --ask-become-pass $(ARG) -t $(ROLE) --skip-tags=$(IGNORE)
+	ansible-playbook debian.yml --diff --check --ask-become-pass $(ARG) -t $(ROLE) --skip-tags=$(IGNORE)
 endif
 endif
