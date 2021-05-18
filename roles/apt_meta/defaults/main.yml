@@ -48,6 +48,7 @@ apt_packages:
   - tmux
   - tig
   - ufw
+  - unattended-upgrades
   - unzip
   - vim
   - virtualbox-6.1
