@@ -89,11 +89,11 @@ ifneq ($(USER),root)
 endif
 	DEBIAN_FRONTEND=noninteractive apt-get update -qq
 	DEBIAN_FRONTEND=noninteractive apt-get install -qq -q --no-install-recommends --no-install-suggests \
-		python-apt \
-		python-dev \
-		python-jmespath \
-		python-pip \
-		python-setuptools
+		python3-apt \
+		python3-dev \
+		python3-jmespath \
+		python3-pip \
+		python3-setuptools
 	pip install wheel
 	pip install ansible
 
