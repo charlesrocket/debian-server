@@ -52,5 +52,5 @@
     - "{{ apt_repo_repositories }}"
   notify: update apt repo cache
 
-# Make sure the handler runs now and not at the end of the playbook
-- ansible.builtin.meta: flush_handlers
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers
