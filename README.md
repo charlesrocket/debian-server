@@ -3,7 +3,7 @@
 
 Ansible playbook for **Debian** server
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.gif)
 
 ### Start
 
