@@ -4,12 +4,12 @@
   apt:
     state: "{{ apt_state }}"
     name: "{{ packages }}"
-    autoclean: True
-    autoremove: True
-    force_apt_get: True
-    update_cache: True
+    autoclean: true
+    autoremove: true
+    force_apt_get: true
+    update_cache: true
     cache_valid_time: 3600
-    install_recommends: False
+    install_recommends: false
   vars:
     packages: "{{ apt_packages }}"
-  become: True
+  become: true

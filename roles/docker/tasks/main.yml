@@ -4,17 +4,17 @@
   apt:
     name: docker-ce
     state: present
-    update_cache: True
+    update_cache: true
 
 - name: Create Docker group
   group:
     name: docker
     state: present
-  become: True
+  become: true
 
 - name: Add current user to Docker group
   user:
     name: "{{ ansible_user_id }}"
     groups: docker
     append: yes
-  become: True
+  become: true

@@ -55,11 +55,11 @@
   lineinfile:
     dest: /etc/fstab
     line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
-  become: True
+  become: true
 
 - name: Allow ssh
   ufw:
     rule: allow
     port: 22
     proto: tcp
-  become: True
+  become: true

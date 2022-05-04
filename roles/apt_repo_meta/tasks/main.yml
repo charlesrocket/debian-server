@@ -4,19 +4,19 @@
   apt:
     state: present
     name: "{{ apt_repo_packages }}"
-    update_cache: True
-    install_recommends: False
+    update_cache: true
+    install_recommends: false
   register: task_result
   until: task_result is succeeded
   retries: 30
   delay: 10
-  become: True
+  become: true
 
 - name: Ensure default sources.list is removed
   file:
     state: absent
     path: /etc/apt/sources.list
-  become: True
+  become: true
   notify: update apt repo cache
 
 - name: Ensure apt keys are managed
@@ -26,12 +26,12 @@
     file: "{{ item.file | default(omit) }}"
     keyserver: "{{ item.keyserver | default(omit) }}"
     url: "{{ item.url | default(omit) }}"
-    validate_certs: True
+    validate_certs: true
   register: task_result
   until: task_result is succeeded
   retries: 30
   delay: 10
-  become: True
+  become: true
   with_items:
     - "{{ apt_repo_keys }}"
   notify: update apt repo cache
@@ -41,13 +41,13 @@
     state: "{{ apt_repo_state }}"
     repo: "{{ item.repo }}"
     filename: "{{ item.file }}"
-    validate_certs: True
-    update_cache: True
+    validate_certs: true
+    update_cache: true
   register: task_result
   until: task_result is succeeded
   retries: 30
   delay: 10
-  become: True
+  become: true
   with_items:
     - "{{ apt_repo_repositories }}"
   notify: update apt repo cache
