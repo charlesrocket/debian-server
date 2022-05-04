@@ -9,8 +9,6 @@ apt_repo_repositories:
     repo: deb http://deb.debian.org/debian {{ debian_dist }} main
   - file: debian-updates
     repo: deb http://deb.debian.org/debian {{ debian_dist }}-updates main
-  - file: debian-security
-    repo: deb http://security.debian.org {{ debian_dist }}/updates main
   - file: docker
     repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
   - file: virtualbox
