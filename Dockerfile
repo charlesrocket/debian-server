@@ -9,6 +9,7 @@ RUN set -eux \
 		python3-pip \
 		python3-setuptools \
 		sudo \
+		gnupg \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& apt-get purge -y --autoremove
 
