@@ -1,7 +1,7 @@
 ---
 
 - name: Ensure required packages are installed
-  apt:
+  ansible.builtin.apt:
     state: present
     name: "{{ apt_repo_packages }}"
     update_cache: true
@@ -13,14 +13,14 @@
   become: true
 
 - name: Ensure default sources.list is removed
-  file:
+  ansible.builtin.file:
     state: absent
     path: /etc/apt/sources.list
   become: true
   notify: update apt repo cache
 
 - name: Ensure apt keys are managed
-  apt_key:
+  ansible.builtin.apt_key:
     state: "{{ apt_repo_state }}"
     id: "{{ item.id | default(omit) }}"
     file: "{{ item.file | default(omit) }}"
@@ -37,7 +37,7 @@
   notify: update apt repo cache
 
 - name: Ensure apt repositories are managed
-  apt_repository:
+  ansible.builtin.apt_repository:
     state: "{{ apt_repo_state }}"
     repo: "{{ item.repo }}"
     filename: "{{ item.file }}"
@@ -53,4 +53,4 @@
   notify: update apt repo cache
 
 # Make sure the handler runs now and not at the end of the playbook
-- meta: flush_handlers
+- ansible.builtin.meta: flush_handlers

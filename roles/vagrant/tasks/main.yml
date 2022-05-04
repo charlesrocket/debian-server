@@ -1,31 +1,31 @@
 ---
 
 - name: Find all versions of Vagrant
-  uri:
+  ansible.builtin.uri:
     url: https://releases.hashicorp.com/vagrant/index.json
     return_content: yes
   register: vagrant_index
 
 - name: Finds the latest version of Vagrant when latest var is define
-  set_fact:
+  ansible.builtin.set_fact:
     vagrant_version_to_install: "{{ item }}"
   with_items: "{{ (vagrant_index.content | from_json).versions | list | sort | last }}"
   when: vagrant_version == 'latest'
 
 - name: Use the specified Vagrant version when latest var is not define
-  set_fact:
+  ansible.builtin.set_fact:
     vagrant_version_to_install: "{{ vagrant_version }}"
   when: vagrant_version != 'latest'
 
 - name: Check if Vagrant is present with the right version
-  command: vagrant --version
+  ansible.builtin.command: vagrant --version
   register: vagrant_installed_version
   ignore_errors: yes
   changed_when: false
   failed_when: false
 
 - name: Install Vagrant
-  apt:
+  ansible.builtin.apt:
     deb: "https://releases.hashicorp.com/vagrant/{{ vagrant_version_to_install }}/vagrant_{{ vagrant_version_to_install }}_x86_64.deb"
     state: present
   when:

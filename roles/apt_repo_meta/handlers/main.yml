@@ -1,7 +1,7 @@
 ---
 
 - name: update apt repo cache
-  apt:
+  ansible.builtin.apt:
     cache_valid_time: 1
     update_cache: true
   register: task_result

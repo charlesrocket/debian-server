@@ -1,38 +1,38 @@
 ---
 
 - name: Ensure the system can use the HTTPS transport for APT
-  stat: path=/usr/lib/apt/methods/https
+  ansible.builtin.stat: path=/usr/lib/apt/methods/https
   register: apt_https_transport
 
 - name: Install HTTPS transport for APT
-  apt: pkg=apt-transport-https state=installed
+  ansible.builtin.apt: pkg=apt-transport-https state=installed
   when: not apt_https_transport.stat.exists
 
 - name: Upgrade installed packages
-  apt: upgrade=yes
+  ansible.builtin.apt: upgrade=yes
 
 - name: Install MOTD 1/2
-  copy:
+  ansible.builtin.copy:
     src: 05-hostname
     dest: /etc/update-motd.d/05-hostname
     owner: "{{ ansible_user_id }}"
     mode: 0755
 
 - name: Install MOTD 2/2
-  copy:
+  ansible.builtin.copy:
     src: 60-services
     dest: /etc/update-motd.d/60-services
     owner: "{{ ansible_user_id }}"
     mode: 0755
 
 - name: Edit Bash prompt
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: 'export PS1="\[\e[31m\]x\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[37m\]\\$\[\e[m\] "'
     owner: "{{ ansible_user_id }}"
 
 - name: Tune GPG
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /home/{{ ansible_user_id }}/.bashrc
     line: "{{ item }}"
     owner: "{{ ansible_user_id }}"
@@ -41,24 +41,24 @@
     - "export GPG_TTY"
 
 - name:  Check for "admin" group
-  group:
+  ansible.builtin.group:
     name: admin
     state: present
 
 - name: Populate admin group
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: admin
     append: yes
 
 - name: Restrict shared memory
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/fstab
     line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
   become: true
 
 - name: Allow ssh
-  ufw:
+  community.general.ufw:
     rule: allow
     port: 22
     proto: tcp

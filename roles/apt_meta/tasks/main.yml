@@ -1,7 +1,7 @@
 ---
 
 - name: Ensure apt packages are installed
-  apt:
+  ansible.builtin.apt:
     state: "{{ apt_state }}"
     name: "{{ packages }}"
     autoclean: true

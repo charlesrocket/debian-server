@@ -1,19 +1,19 @@
 ---
 
 - name: Update apt and install docker-ce
-  apt:
+  ansible.builtin.apt:
     name: docker-ce
     state: present
     update_cache: true
 
 - name: Create Docker group
-  group:
+  ansible.builtin.group:
     name: docker
     state: present
   become: true
 
 - name: Add current user to Docker group
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: docker
     append: yes
