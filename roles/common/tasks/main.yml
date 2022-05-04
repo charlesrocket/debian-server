@@ -56,10 +56,3 @@
     dest: /etc/fstab
     line: "none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0"
   become: true
-
-- name: Allow ssh
-  community.general.ufw:
-    rule: allow
-    port: 22
-    proto: tcp
-  become: true
