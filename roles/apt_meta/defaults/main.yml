@@ -21,6 +21,7 @@ apt_packages:
   - gawk
   - gcc
   - git
+  - gnupg
   - grep
   - gzip
   - htop
