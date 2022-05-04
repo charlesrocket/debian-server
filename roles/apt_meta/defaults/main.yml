@@ -4,7 +4,6 @@ apt_state: present
 
 apt_packages:
   - apt-transport-https
-  - build-essential
   - bzip2
   - ca-certificates
   - chkrootkit
