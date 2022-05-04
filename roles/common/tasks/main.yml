@@ -40,7 +40,7 @@
     - "GPG_TTY=$(tty)"
     - "export GPG_TTY"
 
-- name:  Check for "admin" group
+- name: Check for "admin" group
   ansible.builtin.group:
     name: admin
     state: present
@@ -49,7 +49,7 @@
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: admin
-    append: yes
+    append: true
 
 - name: Restrict shared memory
   ansible.builtin.lineinfile:

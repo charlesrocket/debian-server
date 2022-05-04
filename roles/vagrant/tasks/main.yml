@@ -3,7 +3,7 @@
 - name: Find all versions of Vagrant
   ansible.builtin.uri:
     url: https://releases.hashicorp.com/vagrant/index.json
-    return_content: yes
+    return_content: true
   register: vagrant_index
 
 - name: Finds the latest version of Vagrant when latest var is define
@@ -20,7 +20,7 @@
 - name: Check if Vagrant is present with the right version
   ansible.builtin.command: vagrant --version
   register: vagrant_installed_version
-  ignore_errors: yes
+  ignore_errors: true
   changed_when: false
   failed_when: false
 

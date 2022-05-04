@@ -2,6 +2,6 @@
 
 ssh:
   start: false
-  service_enabled: no
+  service_enabled: false
   password_auth: false
   root_login: false

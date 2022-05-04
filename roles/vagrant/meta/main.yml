@@ -1,4 +1,4 @@
 ---
 
 dependencies:
-  - { role: apt_meta }
+  - {role: apt_meta}
