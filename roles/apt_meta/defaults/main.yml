@@ -3,7 +3,6 @@
 apt_state: present
 
 apt_packages:
-  - aptitude
   - apt-transport-https
   - build-essential
   - bzip2
