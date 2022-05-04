@@ -29,6 +29,7 @@ apt_packages:
   - less
   - lolcat
   - lynis
+  - lynx
   - make
   - mc
   - netcat
